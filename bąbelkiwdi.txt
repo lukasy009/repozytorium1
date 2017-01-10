@@ -1,0 +1,17 @@
+import time
+start_time=time.time()
+import random
+def babelkowa(lista):
+	print("Nasza lista:",lista) # poczatkowa lista
+	length=len(lista)
+	for i in range(length-1):
+		for j in range(length-1-i):
+			if lista[j]>lista[j+1]:
+				lista[j],lista[j+1]=lista[j+1],lista[j]
+	print("Posortowana lista:",lista)
+przykladowa_lista=[]
+for i in range(50):
+	d=random.randrange(1000)
+	przykladowa_lista.append(d)
+print(babelkowa(przykladowa_lista))
+print("---%s seconds ---" % (time.time() - start_time))
